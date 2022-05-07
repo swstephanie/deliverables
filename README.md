@@ -63,9 +63,9 @@ In this project, we use python package. Documentation can be found [here](https:
 spaCy is an open-source software library for advanced natural language processing, written in the programming languages Python and Cython.
 It can help us find human names in a text string. 
 ```sh
->> import spacy
->> spacy.prefer_gpu()
->> nlp = spacy.load("en_core_web_sm")
+>>> import spacy
+>>> spacy.prefer_gpu()
+>>> nlp = spacy.load("en_core_web_sm")
 ```
 
 </br>
