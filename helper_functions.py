@@ -91,7 +91,7 @@ def split_address(df: pd.DataFrame, splited_col: str) -> (pd.DataFrame, list):
     :param splited_col: the address column name
     :return: a dataframe with usaddress elements columns and a list of all the usaddress elements
     """
-    # USE CASE : df_MLS = split_address(df_MLS,'usaddress')
+    # USE CASE : df_MLS,ls = split_address(df_MLS,'usaddress')
 
     test = df[splited_col].to_list()
     values = []
@@ -134,7 +134,7 @@ def linkAddress(row: pd.Series, ignore:list) -> str or None:
     :param ignore:
     :return:
 
-    - This function rejoins all the splited and post-cleaning elements back to one
+    - it rejoins all the splited and post-cleaning elements back to one
     """
     # USE CASE : df_MLS['Concatenated Address'] = df_MLS.apply(lambda x: linkAddress(x),axis = 1)
     try:
@@ -197,10 +197,10 @@ def get_new_placekey(df: pd.DataFrame, name: str, address_list: list, without_ap
     placekey_api_key = credlib.placekey_api_key
     pk_api = PlacekeyAPI(placekey_api_key)
 
-
     # USE CASE : df_MLS = df_MLS = get_new_placekey(df_MLS,name = 'placekey_new',\
     #  address_list = ['CC_PROPERTY_ADDR_DISPLAY_1','CC_PROPERTY_ADDR_CITY','CC_PROPERTY_ADDR_STATE','ZIP'],\
     # without_apt_address_list=['Concatenated Address','CC_PROPERTY_ADDR_CITY','CC_PROPERTY_ADDR_STATE','ZIP'])
+    
     def get_placekey(df, country='US'):
         df.columns = ["street_address", "city", "region", "postal_code"]
         df["iso_country_code"] = country
