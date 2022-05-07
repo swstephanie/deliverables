@@ -10,9 +10,7 @@
 from placekey.api import PlacekeyAPI
 import credlib
 import pandas as pd
-import numpy as np
 import snowflake.connector
-from snowflake.connector import cursor
 import usaddress
 import re
 from string import punctuation
